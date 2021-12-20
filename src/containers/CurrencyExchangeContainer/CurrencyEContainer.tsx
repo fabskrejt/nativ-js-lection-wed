@@ -8,9 +8,12 @@ import {
     ChangeCurrentCurrencyAC,
     CurrencyReducersTypes
 } from '../../redux/actions';
-import {connect, ConnectedProps, useDispatch} from 'react-redux';
+import {connect, ConnectedProps, useDispatch, useSelector} from 'react-redux';
+import {selectFullState} from "../../redux/selectors";
 
-const CurrencyEContainer: React.FC<TProps> = props => {
+//const CurrencyEContainer: React.FC<TProps> = props => {
+//Пропсы не нужны, будем использовать useSelector
+const CurrencyEContainer: React.FC = () => {
 
     /*    const {
             currencies,
@@ -23,15 +26,24 @@ const CurrencyEContainer: React.FC<TProps> = props => {
             changeCurrency,
         } = props;*/
 
+/*    const {
+        currencies,
+        currentCurrency,
+        isBuying,
+        amountOfBYN,
+        amountOfCurrency,
+    } = props;*/
+
+
+
+    const dispatch = useDispatch<Dispatch<CurrencyReducersTypes>>()
     const {
         currencies,
         currentCurrency,
         isBuying,
         amountOfBYN,
         amountOfCurrency,
-    } = props;
-
-    const dispatch = useDispatch<Dispatch<CurrencyReducersTypes>>()
+    } = useSelector(selectFullState);
 
     let currencyRate: number = 0;
     const currenciesName = currencies.map((currency: CurrencyType) => {
@@ -122,8 +134,13 @@ const mapDispatchToProps = (dispatch: Dispatch<CurrencyReducersTypes>): any => {
     ChangeCurrentCurrencyAC,
 });*/
 
-const connector = connect(mapStateToProps, {});
-type TProps = ConnectedProps<typeof connector>;
 
-export default connector(CurrencyEContainer);
+/*const connector = connect(mapStateToProps, {});
+type TProps = ConnectedProps<typeof connector>;*/
+
+/*type TProps = ConnectedProps<typeof connector>;
+
+export default connector(CurrencyEContainer);*/
+
+export default CurrencyEContainer;
 
