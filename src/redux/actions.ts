@@ -31,10 +31,16 @@ export const ChangeActionAC = (isBuying: boolean): ChangeAction => {
     }
 };
 
-export type ChangeCurrentCurrencyType = {};
+export type ChangeCurrentCurrencyType = {
+    type: ACTIONS_TYPE.CHANGE_CURRENT_CURRENCY
+    payload: { currentCurrency: string }
+};
 
-// @ts-ignore
-export const СhangeCurrentCurrencyAC = (currentCurrency: string): ChangeCurrentCurrencyType => {
+export const ChangeCurrentCurrencyAC = (currentCurrency: string): ChangeCurrentCurrencyType => {
+    return {
+        type: ACTIONS_TYPE.CHANGE_CURRENT_CURRENCY,
+        payload: {currentCurrency},
+    }
 };
 
 export type CurrencyReducersTypes = ChangeCurrencyFieldType | ChangeAction | ChangeCurrentCurrencyType;
