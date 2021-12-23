@@ -41,6 +41,26 @@ console.log(sum(3)(6) === 9)
 // counter2(); // 1
 // counter(); // 3
 
+function makeCounter(){
+    let count = 0;
+    return ()=> {
+        count += 1
+        return count
+    }
+}
+const counter = makeCounter()
+const counter2 = makeCounter()
+
+console.log(counter())
+console.log(counter2())
+console.log(counter())
+console.log(counter2())
+console.log(counter())
+console.log(counter2())
+counter()
+counter()
+counter2()
+
 // Task 03
 // Переписать функцию из Task 02 так, что бы она принимала число в качестве аргумента и это число было стартовым значением счетчика
 // и возвращала следующий объект методов:
