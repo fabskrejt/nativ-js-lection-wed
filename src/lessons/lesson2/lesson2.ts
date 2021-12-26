@@ -126,8 +126,7 @@ console.log('Task3 end')
 // Task 05
 // решить все задачи по рекурсии которые даны в конце статьи https://learn.javascript.ru/recursion
 
-
-
+console.log('*Task 5*')
 //LearnJS task_1 recursion
 //@ts-ignore
 function sumTo(n: number) {
@@ -140,20 +139,39 @@ function sumTo(n: number) {
 //LearnJS task_1 loop
 function sumToLoop(n: number) {
     let result = 0;
-    for (let i = 0; i <= n; i++){
+    for (let i = 0; i <= n; i++) {
         result += i
     }
     return result
 }
 
-console.log('*Task 5*')
+//LearnJS task_1 Progression
+function sumToProgression(n: number) {
+    return n * (n + 1) / 2;
+}
+
+console.log('*Task 5.1 end*')
 //recursion log
 console.log((sumTo(100))); // 5050)
 //loop log
 console.log((sumToLoop(100))); // 5050)
+//Progression
+console.log((sumToProgression(100))); // 5050)
+console.log('*Task 5.1 end*')
+
+//LearnJS task_2 recursion
+//@ts-ignore
+function factorial(n: number) {
+    if (n === 1) {
+        return 1;
+    }
+    return factorial(n - 1) * n
+}
+console.log('*Task 5.2 end*')
+console.log(factorial(10)) //3628800
+console.log('*Task 5.2 end*')
 
 console.log('*Task 5 end*')
-
 // Task 06
 // написать функцию, которая повторяет функционал метода flat массива на всю глубину.
 
