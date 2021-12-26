@@ -126,6 +126,16 @@ console.log('Task3 end')
 // Task 05
 // решить все задачи по рекурсии которые даны в конце статьи https://learn.javascript.ru/recursion
 
+//@ts-ignore
+function sumTo(n:number) {
+    if(n === 1){
+        return 1
+    }
+    return sumTo(n-1) + n
+}
+alert( sumTo(100) ); // 5050
+
+
 // Task 06
 // написать функцию, которая повторяет функционал метода flat массива на всю глубину.
 
