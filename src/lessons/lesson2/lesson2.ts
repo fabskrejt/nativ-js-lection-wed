@@ -26,10 +26,11 @@ console.log('lesson 2');
 
 
 function sum(a: number) {
-    return (b:number) =>{
-      return a + b
+    return (b: number) => {
+        return a + b
     }
 }
+
 console.log(sum(3)(6) === 9)
 
 // Task 02
@@ -41,13 +42,14 @@ console.log(sum(3)(6) === 9)
 // counter2(); // 1
 // counter(); // 3
 
-function makeCounter(){
+function makeCounter() {
     let count = 0;
-    return ()=> {
+    return () => {
         count += 1
         return count
     }
 }
+
 const counter = makeCounter()
 const counter2 = makeCounter()
 
@@ -69,13 +71,45 @@ counter2()
 // reset: установить счетчик в 0;
 // set: установить счетчик в заданное значение;
 
-function makeCounter1(){
-    let count = 0;
-    return ()=> {
-        count += 1
-        return count
+function makeCounter1(startNumber: number) {
+    let count = startNumber;
+    return {
+        increase() {
+            count += 1
+            return `Counter value increase, current value = ${count}`
+        },
+        decrease() {
+            count -= 1
+            return `Counter value decrease, current value = ${count}`
+        },
+        set(setValue: number) {
+            count += setValue
+            return `Set start counter value, current value = ${count}`
+        },
+        reset() {
+            count = 0
+            return `Reset counter, current value = ${count}`
+        }
     }
 }
+
+console.log('Task3')
+const counterWithStartValue = makeCounter1(3)
+console.log(counterWithStartValue.increase())
+console.log(counterWithStartValue.increase())
+console.log(counterWithStartValue.decrease())
+console.log(counterWithStartValue.decrease())
+console.log(counterWithStartValue.reset())
+console.log(counterWithStartValue.increase())
+console.log(counterWithStartValue.increase())
+console.log(counterWithStartValue.decrease())
+console.log(counterWithStartValue.set(6))
+console.log(counterWithStartValue.increase())
+console.log(counterWithStartValue.increase())
+console.log(counterWithStartValue.increase())
+
+console.log('Task3 end')
+
 
 // Task 04*
 // Реализовать функцию superSum которая принимает число в качестве аргумента, которое указывает на количество слагаемых
