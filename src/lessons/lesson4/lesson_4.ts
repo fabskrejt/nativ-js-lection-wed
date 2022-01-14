@@ -8,18 +8,21 @@ console.log('lesson 4');
 // Создайте промис, который постоянно находиться в состоянии pending.
 // В конструкторе промиса выведите в консоль сообщение "Promise is created".
 
+let pendingPromise = new Promise (()=>console.log("Promise is created"))
 
 // Task 02
 // Создайте промис, который после создания сразу же переходит в состояние resolve
 // и возвращает строку 'Promise Data'
 // Получите данные промиса и выведите их в консоль
 
+let promiseTask2 = Promise.resolve('Promise Data').then(console.log)
 
 // Task 03
 // Создайте промис, который после создания сразу же переходит в состояние rejected
 // и возвращает строку 'Promise Error'
 // Получите данные промиса и выведите их в консоль
 
+let promiseTask3 = Promise.reject('Promise Error').then(console.log)
 
 // Task 04
 // Создайте промис, который переходит в состояние resolved через 3с.
@@ -27,6 +30,8 @@ console.log('lesson 4');
 // и возвращает строку 'Promise Data'
 // Получите данные промиса и выведите их в консоль
 
+// let promiseTask4 = new Promise(res=> setTimeout(()=>res('Promise Data'), 3000))
+// promiseTask4.then(console.log)
 
 // Task 05
 // Создайте литерал объекта handlePromise со следующими свойствами:
@@ -41,6 +46,30 @@ console.log('lesson 4');
 // свойства resolve и reject получают ссылки на соответствующие функции
 // resolve и reject. Следующие два обработчика запускают методы resolve и reject.
 
+// let handlePromise = {
+//     promise: null,
+//     resolve: null,
+//     reject: null,
+//     onSuccess(paramName) {console.log(`Promise is resolved with data: ${paramName}`)},
+//     onError(paramName) {console.log(`Promise is rejected with error: ${paramName}`)},
+// }
+//
+// let createPromise = ()=>{
+//     handlePromise.promise = new Promise((res, rej) => {
+//         handlePromise.reject = rej
+//         handlePromise.resolve = res
+//     })
+// }
+//
+// let resolvePromise = (data)=>{
+//     handlePromise.resolve(data)
+//     handlePromise.onSuccess(data)
+// }
+//
+// let rejectPromise = (data)=>{
+//     handlePromise.reject(data)
+//     handlePromise.onError(data)
+// }
 
 // Task 06
 // Создайте промис, который через 1 с возвращает строку "My name is".
@@ -49,6 +78,20 @@ console.log('lesson 4');
 // Создайте функцию print, которая выводит в консоль значение своего параметра
 // Добавьте два метода then и передайте созданные функции.
 
+// let promiseTask6 = new Promise(res => {
+//     setTimeout(()=>res("My name is"), 1000)
+// })
+//
+// let onSuccess = (a) => {
+//     return `${a} Vladimir`
+// }
+//
+// let printt = (a) => {
+//     console.log(a);
+// }
+// promiseTask6
+//     .then(onSuccess)
+//     .then(printt)
 
 // Task 7
 // Создайте три промиса. Первый промис возвращает объект { name: "Anna" } через 2с,
@@ -56,6 +99,19 @@ console.log('lesson 4');
 // Получите результаты работы промисов, объедините свойства объектов
 // и выведите в консоль {name, age, city}
 
+// let namePromise = new Promise(res => setTimeout(
+//     ()=>res({ name: "Anna" }), 2000
+// ))
+//
+// let agePromise = new Promise (res => setTimeout(
+//     ()=>res( {age: 16}), 3000
+// ))
+// let cityPromise = new Promise (res => setTimeout(
+//     ()=>res( {city: ''}), 4000
+// ))
+//
+// Promise.all([namePromise,agePromise,cityPromise])
+//     .then(data => console.log(data))
 
 
 // just a plug
