@@ -34,6 +34,12 @@ let someObj:someObjType = {
     name: 'Eugene',
     age: 32
 }
+function greeting(){
+    return  `My name is ${this.name}. I am ${this.age}`
+}
+//@ts-ignore
+someObj.greeting = greeting
+greeting()
 
 // Task 02
 // реализовать счетчик counter в виде объекта со следующими методами:
