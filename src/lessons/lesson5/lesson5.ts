@@ -119,7 +119,8 @@ function MyFirstConstructorFunc (name: string,age: string){
 // Task 05 есть 2 объекта One и Two. С помощью bind и метода sayHello заставьте поздороваться объект One
 
 let One = {name: 'One'};
-let Two = {name: 'Two', sayHello: function() {console.log(`Hello, my name is ${this.name}`)}};
+let Two = {name: 'Two', sayHello: function() {console.log(`Hello, my name is ${this.name}`)}.bind(One)};
+
 
 // Task 06
 // создайте объект helperObj у которого есть следующие методы:
