@@ -77,7 +77,28 @@ console.log('Lesson 5');
 // переделайте код из Task 02, что бы сработал следующий код:
 // counter.setCurrentCount(10).increment().increment().increment().decrement().getCurrentCount() // 12
 
-
+// let objCounter = {
+//     count: 0,
+//     getCurrentCount(){
+//         console.log(this.count)
+//     },
+//     increment(){
+//         this.count++
+//         return this
+//     },
+//     decrement(){
+//         this.count--
+//         console.log(this.count)
+//         return this},
+//     setCurrentCount(){
+//         this.count = prompt('a =', '0')
+//         return this
+//
+//     },
+//     restCurrentCount(){this.count = 0, console.log('count= ' + this.count);
+//     },
+//
+// }
 
 // Task 04
 // Написать функцию конструктор myFirstConstructorFunc которая принимает 2 параметра name и age и возвращает объект
