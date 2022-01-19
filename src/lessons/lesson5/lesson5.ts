@@ -25,21 +25,22 @@ console.log('Lesson 5');
 // Дан объект someObj, реализуйте функцию greeting и присвойте ее ключу объекта с аналогичным именем.
 // Функция должна вернуть строку `My name is ${name}. I am ${age}`, где name и age берутся из свойств объекта
 
-type someObjType = {
-    name: string;
-    age: number;
-}
-
-let someObj:someObjType = {
-    name: 'Eugene',
-    age: 32
-}
-function greeting(){
-    return  `My name is ${this.name}. I am ${this.age}`
-}
-//@ts-ignore
-someObj.greeting = greeting
-greeting()
+// type someObjType = {
+//     name: string;
+//     age: number;
+// }
+//
+// let someObj:someObjType = {
+//     name: 'Eugene',
+//     age: 32
+// }
+// function greeting(){
+//     //@ts-ignore
+//     return  `My name is ${this.name}. I am ${this.age}`
+// }
+// //@ts-ignore
+// someObj.greeting = greeting
+// greeting()
 
 // Task 02
 // реализовать счетчик counter в виде объекта со следующими методами:
@@ -50,9 +51,33 @@ greeting()
 // rest current count - устанавливает значение счетчика равным 0
 // все методы должны ссылаться на сам объект
 
+// let objCounter = {
+//     count: 0,
+//     getCurrentCount(){
+//         console.log(this.count)
+//     },
+//     increment(){
+//         this.count++
+//         console.log(this.count)
+//     },
+//     decrement(){
+//         this.count--
+//         return this.count},
+//     setCurrentCount(){
+//         this.count = prompt('a =', '0')
+//         console.log(this.count);
+//
+//     },
+//     restCurrentCount(){this.count = 0, console.log('count= ' + this.count);
+//     },
+//
+// }
+
 // Task 03
 // переделайте код из Task 02, что бы сработал следующий код:
 // counter.setCurrentCount(10).increment().increment().increment().decrement().getCurrentCount() // 12
+
+
 
 // Task 04
 // Написать функцию конструктор myFirstConstructorFunc которая принимает 2 параметра name и age и возвращает объект
